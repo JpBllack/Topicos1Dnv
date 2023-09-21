@@ -2,20 +2,12 @@ package br.unitins.topicos1.model;
 
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 
 @Entity
-public class Estado {
+public class Estado extends DefalutEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @Column(length = 60)
     private String nome;
@@ -41,13 +33,6 @@ public class Estado {
         this.sigla = sigla;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public LocalDate getDataCadastro() {
         return dataCadastro;
